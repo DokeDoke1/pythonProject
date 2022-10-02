@@ -1,75 +1,79 @@
+# TASK1
 
-# TASK 1
-#x = int(input("Введите число:"))
-#for i in range(1, x+1):
-   # print(int(math.pow(i, 3)))
+# class Bank_Account:
+#     def __init__(self):
+#         self.b = 0
+
+#     def dep(self):
+#         a = int(input("Введите сумму которую вы хотите вывести: "))
+#         self.b = self.b + a
+#
+#     def output(self):
+#         a = int(input("Сколько денег вы хотите вывести?: "))
+#         if self.b >= a:
+#             self.b = self.b - a
+#             print("Средства успешно выведены!" )
+#             print("Остаток на балансе", self.b,"$")
+#         else:
+#             print("У вас недостаточно средств для вывода")
+#             print("На счету", self.b,"$")
+#
+# S = Bank_Account()
+# S.dep()
+# S.output()
 
 # TASK 2
-#A = input("введите что-то").split()
-#A.reverse()
-#print(A)
 
-# TASK 3
-#x = int(input("Введите число: "))
-#f = 1
-#while x > 1:
-#    f = x * f
-#    x = x - 1
-#print(f)
-
-# TASK 4
-#x = int(input("Введите число: "))
-#f = 1
-#while x > 1:
-#    f = x + f
-#    x = x - 1
-#print(f)
-
-# TASK 5
-
-# def getPalindrom(text):
-#     if text == text[::-1]:
-#         return True
-#     return False
-#
-# print(getPalindrom(input("Введите что-нибудь: ")))
-
-# TASK 6
-#
-# R = int(input('Введите кол-во строк: '))
-# for i in range(0, R + 1):
-#     for j in range(R - i, 0, -1):
-#         print(j, end=' ')
-#     print()
-
-# TASK 7
-
-# R = int(input('Введите кол-во строк: '))
-# for i in range(R+1):
-#     for j in range(i):
-#         print(i, end=' ')
-#     print('')
-
-# TASK 8
-
-# get_Discount = lambda d,s: d-(d/100*s)
-# sum = get_Discount(*map(int,input("Введите числа: ").split()))
-# print(sum)
+class Money:
+    def __init__(self, number=float(input("Введите намбер денег ")),
+                 currency=str(input("Введите валюту [USD,EUR,RUB] ")),
+                 amount=float(input("Введите эмаунт денег "))):
+        self.number = number
+        self.currency = currency
+        self.amount = amount
 
 
-# TASK 9
 
-# def sum(n):
-#     if n == 0:
-#         return 0
-#     else:
-#         return n+sum(n-1)
-# print(sum(int(input("Введи число: "))))
+    def to_tenge(self):
+        USD = 480
+        EUR = 500
+        RUB = 8
+        # currency = str(input('Какую валюту вы хотите конвертировать в тенге [USD, EUR, RUB]? '))
+        if self.currency == "USD":
+            return self.amount*self.number*USD
+        elif self.currency == "EUR":
+            return self.amount*self.number*EUR
+        elif self.currency == "RUB":
+            return self.amount*self.number*RUB
+        else:
+            print("нет такой валюты ты че")
+
+    def Get(self):
+        print(f'{self.amount} of {self.number} {self.currency}')
+
+class Wallet(Money):
+    def __int__(self,dengi):
+        self.money=[]
+        self.money.append(Money.Get(dengi))
+    def addwallet(self,dengi):
+        self.money.append(Money.Get(dengi))
+    def getIndex(self,a):
+        print(self.money[a])
+    def __str__(self):
+        return self.money
+
+a=Money()
+a.Get()
+# m=Wallet()
+# m.addwallet()
+# print(a.__str__())
 
 
-# TASK 10
-pifagor = lambda a,b,c: a*a+b*b==c
-sum = pifagor(*map(int,input("Введите числа: ").split()))
-print(sum)
+
+
+
+
+
+
 
 
